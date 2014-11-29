@@ -1,0 +1,9 @@
+<%= render 'layouts/message' %>
+
+<%if current_user%>
+	<p><%= @current_user.nickname %>谢谢你登录了我们网站！你已经登录了 <%= @count %> 次了，总共登录时间是 <%= @time %> 分钟了。</p>
+<% else %>
+	<p>你好，陌生人！你没有登录，或者你还没有注册，但是你已经浏览这个页面 <%= @time %> 分钟了。</p>
+<% end %>
+
+<p>现在总共有 <%= @users_num %> 个注册用户在查看这个网站，有 {m} 个陌生人在查看这个网站</p>

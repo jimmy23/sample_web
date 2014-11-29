@@ -1,0 +1,14 @@
+<% flash.each do |name, msg| %>
+	<%= content_tag :div, class: "alert alert-#{name == 'notice' ? 'success' : 'danger'}" do %>
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	  <%= content_tag :p, msg%>
+	<% end %>
+<% end %>
+
+<%= form_tag sessions_path, class: "form-signin", role: "form" do %>
+	<%= content_tag :h2, "请先登陆", class: "form-signin-heading" %>
+	<%= text_field_tag :nickname, params[:nickname], class: "form-control", placeholder: "nickname" %>
+	<%= password_field_tag :password, params[:password], class: "form-control", placeholder: "密码" %>
+
+	<%= submit_tag :确定, class: "btn btn-lg btn-primary btn-block" %>
+<% end %>

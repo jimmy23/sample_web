@@ -1,0 +1,18 @@
+<% if @user.errors.any? %>
+	<%= content_tag :div, class: "alert alert-danger" do %>
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+		<ul>
+	  <% @user.errors.full_messages.each do |msg| %>
+	  	<li><%= msg %></li>
+	  <% end %>
+	  </ul>
+	<% end %>
+<% end %>
+
+<%= form_for @user, html: {class: "form-signin", role: "form"} do |f| %>
+	<%= content_tag :h2, "注册", class: "form-signin-heading" %>
+	<%= f.text_field :nickname, class: "form-control", placeholder: "姓名" %>
+	<%= f.password_field :password, class: "form-control", placeholder: "密码" %>
+	<%= f.password_field :password_confirmation, class: "form-control", placeholder: "再输一次" %>
+	<%= f.submit :确定, class: "btn btn-lg btn-primary btn-block" %>
+<% end %>
