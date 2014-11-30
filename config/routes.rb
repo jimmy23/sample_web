@@ -65,4 +65,6 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
 
+  match "welcome/get_login_num" => "welcome#get_login_num", via: [:get]
+
 end

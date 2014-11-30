@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141129022934) do
+ActiveRecord::Schema.define(version: 20141130020622) do
 
   create_table "users", force: true do |t|
     t.string   "nickname"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20141129022934) do
     t.string   "password_salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_login"
   end
 
 end
